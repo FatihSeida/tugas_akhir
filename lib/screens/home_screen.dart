@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../widgets/destination_carousel.dart';
 import '../widgets/hotel_carousel.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+//import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -9,17 +9,17 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  int _selectedIndex = 0;
+  //int _selectedIndex = 0;
   int _currentTab = 0;
 
-  List<IconData> _icons = [
+  /*List<IconData> _icons = [
     FontAwesomeIcons.plane,
     FontAwesomeIcons.bed,
     FontAwesomeIcons.walking,
     FontAwesomeIcons.biking,
-  ];
+  ];*/
 
-  Widget _buildIcon(int index) {
+  /*Widget _buildIcon(int index) {
     return GestureDetector(
       onTap: () {
         setState(() {
@@ -44,10 +44,11 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
     );
-  }
+  }*/
 
   @override
   Widget build(BuildContext context) {
+    final cursorColor = Theme.of(context).cursorColor;
     return Scaffold(
       body: SafeArea(
         child: ListView(
@@ -64,7 +65,38 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             SizedBox(height: 20),
-            Row(
+            Column(
+              children: <Widget>[
+                TextFormField(
+                  cursorColor: cursorColor,
+                  decoration: InputDecoration(
+                    border: const OutlineInputBorder(),
+                    hintText: 'Berapa Harga yang kamu inginkan?',
+                    labelText: 'Harga',
+                  ),
+                ),
+                SizedBox(height: 20),
+                TextFormField(
+                  cursorColor: cursorColor,
+                  decoration: InputDecoration(
+                    border: const OutlineInputBorder(),
+                    hintText: 'Kapasitas yang kamu butuhkan?',
+                    labelText: 'Kapasitas',
+                  ),
+                ),
+                SizedBox(height: 20),
+                Row(
+                  children: <Widget>[
+                    Text("Tentukan Lokasi"),
+                    RaisedButton(
+                      child: Text('Set Location'),
+                      onPressed: () {},
+                    ),
+                  ],
+                ),
+              ],
+            ),
+            /*Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: _icons
                   .asMap()
@@ -73,7 +105,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     (MapEntry map) => _buildIcon(map.key),
                   )
                   .toList(),
-            ),
+            ),*/
             SizedBox(
               height: 20,
             ),
