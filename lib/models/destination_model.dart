@@ -5,6 +5,10 @@ class Destination {
   String city;
   String country;
   String description;
+  /*int harga
+  int jarak
+  int kapasitas
+  list<Facilities> facilities*/
   List<Activity> activities;
 
   Destination({
@@ -12,6 +16,10 @@ class Destination {
     this.city,
     this.country,
     this.description,
+    /*this.harga,
+    this.jarak,
+    this.kapasitas,
+    this.facilities,*/
     this.activities,
   });
 }
@@ -68,3 +76,29 @@ List<Destination> destinations = [
     activities: activities,
   ),
 ];
+
+/*
+  if(harga <= -500){
+    point = 0;
+  } else if (harga <= -400 && harga > -500){
+    point = 1;
+  } else if (harga <= -300 && harga > -400){
+    point = 2;
+  } else if (harga <= -200 && harga > -300){
+    point = 3;
+  } else if (harga <= -100 && harga > -200){
+    point = 4;
+  } else if (harga <= 0 && harga > -100){
+    point = 5;
+  } else if (harga <= 100 && harga > 0){
+    point = 6;
+  } else if (harga <= 200 && harga > 100){
+    point = 7;
+  } else if (harga <= 300 && harga > 200){
+    point = 8;
+  } else if (harga <= 400 && harga > 300){
+    point = 9;
+  } else if (harga <= 500 && harga > 400){
+    point = 10;
+  }
+*/
